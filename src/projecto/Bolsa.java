@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 import javax.swing.JTextArea;
 import java.awt.Font;
@@ -59,15 +60,22 @@ public class Bolsa extends JFrame {
 		lblNewLabel.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
 		lblNewLabel.setLabelFor(this);
 		lblNewLabel.setToolTipText("");
-		lblNewLabel.setBounds(189, 11, 48, 22);
+		lblNewLabel.setBounds(268, 11, 48, 22);
 		contentPane.add(lblNewLabel);
 		
 		table = new JTable();
 		table.setBorder(UIManager.getBorder("ScrollPane.border"));
-		table.setBackground(SystemColor.scrollbar);
+		table.setBackground(new Color(212, 208, 200));
 		table.setForeground(Color.BLUE);
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
 				{null, null, null, null, null},
 				{null, null, null, null, null},
 				{null, null, null, null, null},
@@ -81,25 +89,34 @@ public class Bolsa extends JFrame {
 				"New column", "New column", "New column", "New column", "New column"
 			}
 		));
-		table.setBounds(62, 66, 353, 128);
+		table.setBounds(10, 16, 188, 240);
 		contentPane.add(table);
 		
 		lblMatrizDeEspacios = new JLabel("Matriz de Espacios");
 		lblMatrizDeEspacios.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		lblMatrizDeEspacios.setBounds(159, 41, 117, 14);
+		lblMatrizDeEspacios.setBounds(216, 29, 117, 14);
 		contentPane.add(lblMatrizDeEspacios);
 		
-		JButton btnEnviar = new JButton("Guardar");
+		JButton btnEnviar = new JButton("Agregar");
 		btnEnviar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+			public void actionPerformed(ActionEvent arg0) {				
+				JOptionPane.showMessageDialog(null, "Seleccione los Espacios a Reservar");
 			}
 		});
-		btnEnviar.setBounds(126, 213, 91, 23);
+		btnEnviar.setBounds(299, 62, 91, 23);
 		contentPane.add(btnEnviar);
 		
-		JButton btnEliminar = new JButton("Eliminar");
-		btnEliminar.setBounds(258, 213, 91, 23);
+		JButton btnEliminar = new JButton("Borrar");
+		btnEliminar.setBounds(299, 96, 91, 23);
 		contentPane.add(btnEliminar);
+		
+		JButton btnEspaciosDisponibles = new JButton("Espacios Disponibles");
+		btnEspaciosDisponibles.setBounds(268, 130, 141, 23);
+		contentPane.add(btnEspaciosDisponibles);
+		
+		JButton btnEspaciosReservados = new JButton("Espacios Reservados");
+		btnEspaciosReservados.setBounds(268, 164, 141, 23);
+		contentPane.add(btnEspaciosReservados);
 		contentPane.setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{lblNewLabel}));
 	}
 }

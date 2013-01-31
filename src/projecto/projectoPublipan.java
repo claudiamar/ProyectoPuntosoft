@@ -81,7 +81,7 @@ public class projectoPublipan {
 		lblClave.setBounds(144, 114, 68, 14);
 		frame.getContentPane().add(lblClave);
 		
-		JButton btnEnviar = new JButton("Enviar");
+		JButton btnEnviar = new JButton("Aceptar");
 		btnEnviar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Bolsa miBolsa = new Bolsa();
@@ -90,7 +90,7 @@ public class projectoPublipan {
 			}
 		});
 		btnEnviar.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		btnEnviar.setBounds(217, 148, 72, 23);
+		btnEnviar.setBounds(215, 143, 85, 23);
 		frame.getContentPane().add(btnEnviar);
 		
 		JLabel lblPublipan = new JLabel("Publipan Quind\u00EDo");
